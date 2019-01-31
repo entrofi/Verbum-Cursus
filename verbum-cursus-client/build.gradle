@@ -1,0 +1,37 @@
+import com.wiredforcode.gradle.spawn.*
+
+buildscript {
+  repositories {
+    mavenCentral()
+    jcenter()
+    maven { url 'http://dl.bintray.com/vermeulen-mp/gradle-plugins' }
+  }
+  dependencies {
+    classpath 'com.wiredforcode:gradle-spawn-plugin:0.8.0'
+  }
+}
+plugins {
+  id "com.moowork.node" version "1.2.0"
+    id "com.wiredforcode.spawn" version "0.8.0"
+}
+
+apply plugin: 'com.wiredforcode.spawn'
+
+node {
+  version = '10.11.0'
+  npmVersion = '6.7.0'
+  download = true
+}
+
+
+task ngServe(type: SpawnProcessTask) {
+  command "npm run ng serve "
+  ready "Angular cli server started"
+}
+
+task sayHello() {
+  doLast {
+    println new File(".").absolutePath
+    println('Hello world')
+  }
+}
