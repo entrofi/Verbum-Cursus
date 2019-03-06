@@ -135,5 +135,8 @@
       }
     }
   },
-  "defaultProject": "verbum-cursus-client"
+  "defaultProject": "verbum-cursus-client",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
