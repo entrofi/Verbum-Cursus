@@ -20,6 +20,6 @@ FROM nginx:alpine
 ## Remove default nginx website
 RUN rm -rf /usr/share/nginx/html/*
 ## From 'builder' copy website to default nginx public folder
-COPY --from=node /usr/app/dist/verbum-cursus-client/* /usr/share/nginx/html
+COPY --from=node /usr/app/dist/verbum-cursus-client/* /usr/share/nginx/html/
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
