@@ -1,0 +1,13 @@
+apiVerson: v1
+kind: Pod
+metadata:
+  name: verbumcursus.entrofi-academy.com
+  labels:
+    app: verbumcursus
+  spec:
+    containers:
+      - name: verbum-cursus-kube-demo
+        image: entrofi/verbum-cursus-kube-demo
+        ports:
+          - containerPorts: 80
+
